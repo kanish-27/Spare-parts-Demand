@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi-Plant Command Center - SmartPlant Simulator</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fsmartplant3321back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-surface border-b border-secondary-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                            <circle cx="16" cy="12" r="3" fill="white"/>
+                            <path d="M16 16l-4 4h8l-4-4z" fill="white"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-text-primary">SmartPlant Simulator</h1>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-smooth">Home</a>
+                        <a href="interactive_simulation_hub.html" class="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-smooth">Simulation Hub</a>
+                        <a href="digital_twin_factory_floor.html" class="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-smooth">Digital Twin</a>
+                        <a href="predictive_analytics_center.html" class="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-smooth">Analytics</a>
+                        <a href="multi_plant_command_center.html" class="bg-primary-100 text-primary-700 px-3 py-2 rounded-md text-sm font-medium">Command Center</a>
+                        <a href="performance_analytics_suite.html" class="text-secondary-600 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium transition-smooth">Performance</a>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex items-center">
+                    <div class="relative">
+                        <input type="text" placeholder="Search plants, metrics..." class="input-field w-64 pl-10 pr-4 py-2 text-sm" />
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-secondary-600 hover:text-primary-600 p-2">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Executive Dashboard Header -->
+    <section class="bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">Multi-Plant Command Center</h1>
+                    <p class="text-primary-100 text-lg">Strategic oversight across 12 manufacturing facilities</p>
+                    <div class="flex items-center mt-2 text-sm text-primary-200">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Last updated: September 23, 2025 at 6:46 AM
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button class="bg-white text-primary-600 font-semibold px-6 py-3 rounded-lg hover:bg-primary-50 transition-smooth">
+                        Generate Executive Report
+                    </button>
+                    <button class="border-2 border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white hover:text-primary-600 transition-smooth">
+                        Schedule Stakeholder Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Performance Metrics -->
+    <section class="py-8 bg-surface border-b border-secondary-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Total ROI -->
+                <div class="card-elevated text-center">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-success-600 mb-2">₹1,033M</div>
+                    <div class="text-sm text-text-secondary mb-2">Annual ROI</div>
+                    <div class="text-xs text-success-600 font-medium">↑ 34% YoY Growth</div>
+                </div>
+
+                <!-- Cost Savings -->
+                <div class="card-elevated text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-primary-600 mb-2">₹30.84 Crores</div>
+                    <div class="text-sm text-text-secondary mb-2">Quarterly Savings</div>
+                    <div class="text-xs text-primary-600 font-medium">↑ 28% vs Target</div>
+                </div>
+
+                <!-- Operational Efficiency -->
+                <div class="card-elevated text-center">
+                    <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-accent-600 mb-2">96.8%</div>
+                    <div class="text-sm text-text-secondary mb-2">Overall Efficiency</div>
+                    <div class="text-xs text-accent-600 font-medium">↑ 12% Improvement</div>
+                </div>
+
+                <!-- Active Plants -->
+                <div class="card-elevated text-center">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <div class="text-3xl font-bold text-secondary-600 mb-2">12/12</div>
+                    <div class="text-sm text-text-secondary mb-2">Plants Online</div>
+                    <div class="text-xs text-success-600 font-medium">100% Operational</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Content -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Facility Comparison Matrix -->
+                <div class="lg:col-span-2">
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-text-primary">Facility Performance Matrix</h2>
+                            <div class="flex items-center space-x-2">
+                                <button class="text-sm text-secondary-600 hover:text-primary-600 transition-smooth">
+                                    <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                    </svg>
+                                    Export
+                                </button>
+                                <button class="text-sm text-secondary-600 hover:text-primary-600 transition-smooth">
+                                    <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                    </svg>
+                                    Refresh
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Facility Grid -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full">
+                                <thead>
+                                    <tr class="border-b border-secondary-200">
+                                        <th class="text-left py-3 px-4 font-semibold text-text-primary">Facility</th>
+                                        <th class="text-center py-3 px-4 font-semibold text-text-primary">Efficiency</th>
+                                        <th class="text-center py-3 px-4 font-semibold text-text-primary">Uptime</th>
+                                        <th class="text-center py-3 px-4 font-semibold text-text-primary">Cost/Unit</th>
+                                        <th class="text-center py-3 px-4 font-semibold text-text-primary">Status</th>
+                                        <th class="text-center py-3 px-4 font-semibold text-text-primary">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-secondary-200">
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center">
+                                                <div class="w-3 h-3 bg-success-500 rounded-full mr-3"></div>
+                                                <div>
+                                                    <div class="font-medium text-text-primary">Mumbai Manufacturing</div>
+                                                    <div class="text-sm text-text-secondary">Maharashtra, India</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-success-600 font-semibold">98.7%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-success-600 font-semibold">99.2%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-text-primary font-semibold">₹195.02</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <span class="status-success px-2 py-1 rounded-full text-xs font-medium">Optimal</span>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center">
+                                                <div class="w-3 h-3 bg-warning-500 rounded-full mr-3"></div>
+                                                <div>
+                                                    <div class="font-medium text-text-primary">Bangalore Operations</div>
+                                                    <div class="text-sm text-text-secondary">Karnataka, India</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-warning-600 font-semibold">94.3%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-warning-600 font-semibold">96.8%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-text-primary font-semibold">₹222.56</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <span class="status-warning px-2 py-1 rounded-full text-xs font-medium">Attention</span>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">Optimize</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center">
+                                                <div class="w-3 h-3 bg-success-500 rounded-full mr-3"></div>
+                                                <div>
+                                                    <div class="font-medium text-text-primary">Chennai Facility</div>
+                                                    <div class="text-sm text-text-secondary">Tamil Nadu, India</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-success-600 font-semibold">97.1%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-success-600 font-semibold">98.5%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-text-primary font-semibold">₹200.92</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <span class="status-success px-2 py-1 rounded-full text-xs font-medium">Optimal</span>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <button class="text-primary-600 hover:text-primary-700 text-sm font-medium">View Details</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-secondary-50 transition-smooth">
+                                        <td class="py-4 px-4">
+                                            <div class="flex items-center">
+                                                <div class="w-3 h-3 bg-error-500 rounded-full mr-3"></div>
+                                                <div>
+                                                    <div class="font-medium text-text-primary">Hyderabad Plant</div>
+                                                    <div class="text-sm text-text-secondary">Telangana, India</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-error-600 font-semibold">89.2%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-error-600 font-semibold">92.1%</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <div class="text-text-primary font-semibold">₹260.10</div>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <span class="status-error px-2 py-1 rounded-full text-xs font-medium">Critical</span>
+                                        </td>
+                                        <td class="text-center py-4 px-4">
+                                            <button class="text-error-600 hover:text-error-700 text-sm font-medium">Urgent Action</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Allocation Panel -->
+                <div class="space-y-6">
+                    <!-- Cross-Plant Optimization -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Optimization Opportunities</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-success-50 border border-success-200 rounded-lg">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="text-sm font-medium text-success-800">Resource Reallocation</div>
+                                        <div class="text-xs text-success-600 mt-1">Mumbai → Delhi</div>
+                                    </div>
+                                    <div class="text-success-600 font-bold text-sm">+₹706 Lakhs</div>
+                                </div>
+                                <div class="mt-2">
+                                    <button onclick="implementResourceReallocation()" class="text-xs bg-success-600 text-white px-3 py-1 rounded hover:bg-success-700 transition-smooth">
+                                        Implement
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-primary-50 border border-primary-200 rounded-lg">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="text-sm font-medium text-primary-800">Inventory Balancing</div>
+                                        <div class="text-xs text-primary-600 mt-1">Multi-plant optimization</div>
+                                    </div>
+                                    <div class="text-primary-600 font-bold text-sm">+₹353 Lakhs</div>
+                                </div>
+                                <div class="mt-2">
+                                    <button class="text-xs bg-primary-600 text-white px-3 py-1 rounded hover:bg-primary-700 transition-smooth" onclick="showInventoryBalancingDetails()">
+                                        Review
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-accent-50 border border-accent-200 rounded-lg">
+                                <div class="flex items-start justify-between">
+                                    <div class="flex-1">
+                                        <div class="text-sm font-medium text-accent-800">Capacity Sharing</div>
+                                        <div class="text-xs text-accent-600 mt-1">Bangalore ↔ Chennai</div>
+                                    </div>
+                                    <div class="text-accent-600 font-bold text-sm">+₹260 Lakhs</div>
+                                </div>
+                                <div class="mt-2">
+                                    <button onclick="showCapacitySharingAnalysis()" class="text-xs bg-accent-600 text-white px-3 py-1 rounded hover:bg-accent-700 transition-smooth">
+                                        Analyze
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Goals -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Strategic Goals Progress</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-text-primary">Cost Reduction Target</span>
+                                    <span class="text-sm text-success-600 font-semibold">87%</span>
+                                </div>
+                                <div class="w-full bg-secondary-200 rounded-full h-2">
+                                    <div class="bg-success-500 h-2 rounded-full" style="width: 87%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-text-primary">Efficiency Improvement</span>
+                                    <span class="text-sm text-primary-600 font-semibold">73%</span>
+                                </div>
+                                <div class="w-full bg-secondary-200 rounded-full h-2">
+                                    <div class="bg-primary-500 h-2 rounded-full" style="width: 73%"></div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-text-primary">Digital Transformation</span>
+                                    <span class="text-sm text-accent-600 font-semibold">92%</span>
+                                </div>
+                                <div class="w-full bg-secondary-200 rounded-full h-2">
+                                    <div class="bg-accent-500 h-2 rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROI Analytics Dashboard -->
+    <section class="py-8 bg-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-text-primary mb-2">ROI Analytics Dashboard</h2>
+                <p class="text-text-secondary">Comprehensive financial impact analysis across all facilities</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- ROI Trend Chart -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold text-text-primary">ROI Trend Analysis</h3>
+                        <div class="flex items-center space-x-2">
+                            <select class="text-sm border border-secondary-200 rounded px-3 py-1">
+                                <option>Last 12 Months</option>
+                                <option>Last 6 Months</option>
+                                <option>Last Quarter</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Chart Placeholder -->
+                    <div class="h-64 bg-secondary-50 rounded-lg flex items-center justify-center border border-secondary-200">
+                        <svg class="w-full h-full p-4" viewBox="0 0 400 200">
+                            <!-- Chart Grid -->
+                            <defs>
+                                <pattern id="chartGrid" width="40" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" fill="url(#chartGrid)"/>
+                            
+                            <!-- ROI Trend Line -->
+                            <polyline fill="none" stroke="#2563EB" stroke-width="3" points="20,160 60,140 100,120 140,100 180,80 220,70 260,60 300,50 340,40 380,30"/>
+                            
+                            <!-- Data Points -->
+                            <circle cx="20" cy="160" r="4" fill="#2563EB"/>
+                            <circle cx="60" cy="140" r="4" fill="#2563EB"/>
+                            <circle cx="100" cy="120" r="4" fill="#2563EB"/>
+                            <circle cx="140" cy="100" r="4" fill="#2563EB"/>
+                            <circle cx="180" cy="80" r="4" fill="#2563EB"/>
+                            <circle cx="220" cy="70" r="4" fill="#2563EB"/>
+                            <circle cx="260" cy="60" r="4" fill="#2563EB"/>
+                            <circle cx="300" cy="50" r="4" fill="#2563EB"/>
+                            <circle cx="340" cy="40" r="4" fill="#2563EB"/>
+                            <circle cx="380" cy="30" r="4" fill="#2563EB"/>
+                            
+                            <!-- Labels -->
+                            <text x="20" y="190" text-anchor="middle" class="text-xs fill-secondary-600">Jan</text>
+                            <text x="100" y="190" text-anchor="middle" class="text-xs fill-secondary-600">Mar</text>
+                            <text x="180" y="190" text-anchor="middle" class="text-xs fill-secondary-600">May</text>
+                            <text x="260" y="190" text-anchor="middle" class="text-xs fill-secondary-600">Jul</text>
+                            <text x="340" y="190" text-anchor="middle" class="text-xs fill-secondary-600">Sep</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <div class="text-lg font-bold text-success-600">+34%</div>
+                            <div class="text-xs text-text-secondary">YoY Growth</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-primary-600">₹1,033M</div>
+                            <div class="text-xs text-text-secondary">Current ROI</div>
+                        </div>
+                        <div>
+                            <div class="text-lg font-bold text-accent-600">₹1,559M</div>
+                            <div class="text-xs text-text-secondary">Projected</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Savings Breakdown -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold text-text-primary mb-6">Cost Savings Breakdown</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-success-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-success-500 rounded mr-3"></div>
+                                <span class="text-sm font-medium text-text-primary">Predictive Maintenance</span>
+                            </div>
+                            <div class="text-success-600 font-bold">₹35 Crores</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-primary-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-primary-500 rounded mr-3"></div>
+                                <span class="text-sm font-medium text-text-primary">Inventory Optimization</span>
+                            </div>
+                            <div class="text-primary-600 font-bold">₹25.8 Crores</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-accent-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-accent-500 rounded mr-3"></div>
+                                <span class="text-sm font-medium text-text-primary">Resource Allocation</span>
+                            </div>
+                            <div class="text-accent-600 font-bold">₹23.3 Crores</div>
+                        </div>
+                        
+                        <div class="flex items-center justify-between p-3 bg-secondary-50 rounded-lg">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-secondary-500 rounded mr-3"></div>
+                                <span class="text-sm font-medium text-text-primary">Process Optimization</span>
+                            </div>
+                            <div class="text-secondary-600 font-bold">₹19.2 Crores</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 pt-4 border-t border-secondary-200">
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-text-primary">Total Savings</span>
+                            <span class="text-xl font-bold text-success-600">₹1,033M</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Executive Summary Generator -->
+    <section class="py-8 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Report Generator -->
+                <div class="lg:col-span-2">
+                    <div class="card">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-xl font-bold text-text-primary">Executive Summary Generator</h2>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-success-600 font-medium">Auto-Generated</span>
+                                <div class="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-secondary-50 rounded-lg p-6 mb-6">
+                            <h3 class="text-lg font-semibold text-text-primary mb-4">Q3 2025 Performance Summary</h3>
+                            <div class="prose prose-sm text-text-secondary">
+                                <p class="mb-3">
+                                    <strong>Executive Overview:</strong> SmartPlant Simulator deployment across 12 manufacturing facilities has delivered exceptional ROI of $12.4M annually, representing a 34% year-over-year growth. Our multi-plant optimization strategy has successfully reduced operational costs by $3.7M this quarter while maintaining 96.8% overall efficiency.
+                                </p>
+                                <p class="mb-3">
+                                    <strong>Key Achievements:</strong> Detroit Manufacturing and Berlin Facility continue to lead performance metrics with 98.7% and 97.1% efficiency respectively. Cross-plant resource optimization has identified $1.58M in additional savings opportunities, with immediate implementation recommended for São Paulo Plant improvements.
+                                </p>
+                                <p>
+                                    <strong>Strategic Recommendations:</strong> Accelerate digital transformation initiatives (92% complete) and implement identified resource reallocation strategies to achieve projected $18.7M ROI by Q1 2026. Priority focus on São Paulo Plant optimization presents critical improvement opportunity.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="btn-primary">
+                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download Full Report
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                                </svg>
+                                Share with Stakeholders
+                            </button>
+                            <button class="btn-secondary">
+                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0V6a2 2 0 012-2h4a2 2 0 012 2v1m-6 0h8m-9 0v10a2 2 0 002 2h8a2 2 0 002-2V7H7z"/>
+                                </svg>
+                                Schedule Presentation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry Recognition -->
+                <div class="space-y-6">
+                    <!-- Awards & Recognition -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Industry Recognition</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center p-3 bg-accent-50 rounded-lg">
+                                <img src="https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Manufacturing Excellence Award" class="w-12 h-12 rounded object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-text-primary">Manufacturing Excellence Award</div>
+                                    <div class="text-xs text-text-secondary">Industry 4.0 Innovation - 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-primary-50 rounded-lg">
+                                <img src="https://images.pixabay.com/photos/1820/technology-digital-innovation-modern.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Digital Transformation Leader" class="w-12 h-12 rounded object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-text-primary">Digital Transformation Leader</div>
+                                    <div class="text-xs text-text-secondary">Tech Innovation Summit</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-3 bg-success-50 rounded-lg">
+                                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Sustainability Champion" class="w-12 h-12 rounded object-cover mr-3" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                <div>
+                                    <div class="text-sm font-medium text-text-primary">Sustainability Champion</div>
+                                    <div class="text-xs text-text-secondary">Green Manufacturing Alliance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Expert Testimonials -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Expert Endorsements</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-secondary-50 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <img src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Dr. Sarah Mitchell" class="w-8 h-8 rounded-full object-cover mr-2" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <div class="text-sm font-medium text-text-primary">Dr. Sarah Mitchell</div>
+                                        <div class="text-xs text-text-secondary">Manufacturing Research Institute</div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-text-secondary italic">"Revolutionary approach to multi-plant optimization. The ROI metrics speak for themselves."</p>
+                            </div>
+                            
+                            <div class="p-4 bg-secondary-50 rounded-lg">
+                                <div class="flex items-center mb-2">
+                                    <img src="https://images.pixabay.com/photos/2507/business-man-suit-work.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="James Rodriguez" class="w-8 h-8 rounded-full object-cover mr-2" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                    <div>
+                                        <div class="text-sm font-medium text-text-primary">James Rodriguez</div>
+                                        <div class="text-xs text-text-secondary">Industrial Analytics Consortium</div>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-text-secondary italic">"Best-in-class platform for enterprise manufacturing intelligence and strategic decision making."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary-400" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L3 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-13-5z"/>
+                            <circle cx="16" cy="12" r="3" fill="white"/>
+                            <path d="M16 16l-4 4h8l-4-4z" fill="white"/>
+                        </svg>
+                        <span class="ml-3 text-xl font-bold">SmartPlant Simulator</span>
+                    </div>
+                    <p class="text-secondary-300 mb-4">Transforming industrial operations through intelligent simulation and predictive analytics. Empowering manufacturers to achieve operational excellence.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/></svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-secondary-400 hover:text-white transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Platform</h3>
+                    <ul class="space-y-2">
+                        <li><a href="interactive_simulation_hub.html" class="text-secondary-300 hover:text-white transition-smooth">Simulation Hub</a></li>
+                        <li><a href="digital_twin_factory_floor.html" class="text-secondary-300 hover:text-white transition-smooth">Digital Twin</a></li>
+                        <li><a href="predictive_analytics_center.html" class="text-secondary-300 hover:text-white transition-smooth">Analytics Center</a></li>
+                        <li><a href="multi_plant_command_center.html" class="text-secondary-300 hover:text-white transition-smooth">Command Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-smooth">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-smooth">Documentation</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-smooth">Community</a></li>
+                        <li><a href="javascript:void(0)" class="text-secondary-300 hover:text-white transition-smooth">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary-700 mt-8 pt-8 text-center">
+                <p class="text-secondary-300">© 2025 SmartPlant Simulator. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script>
+        function showInventoryBalancingDetails() {
+            // Create modal container
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            
+            // Create modal content
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg shadow-xl p-6 max-w-2xl w-full max-h-[90vh] overflow-y-auto';
+            modalContent.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-primary-800">Inventory Balancing Details</h2>
+                    <button class="text-gray-500 hover:text-gray-700" id="closeModal">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-primary-50 p-4 rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-semibold text-primary-800">Total Optimization Value</span>
+                            <span class="text-lg font-bold text-primary-600">₹35.3M</span>
+                        </div>
+                        <p class="text-sm text-text-secondary">Multi-plant inventory optimization across 4 facilities</p>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-4">
+                        <h3 class="font-semibold mb-2">Optimization Details</h3>
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-2 text-left">Facility</th>
+                                    <th class="p-2 text-left">Before</th>
+                                    <th class="p-2 text-left">After</th>
+                                    <th class="p-2 text-left">Savings</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="p-2">Mumbai Manufacturing</td>
+                                    <td class="p-2">₹87.5M</td>
+                                    <td class="p-2">₹75.2M</td>
+                                    <td class="p-2 text-success-600">₹12.3M</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2">Bangalore Operations</td>
+                                    <td class="p-2">₹65.8M</td>
+                                    <td class="p-2">₹58.1M</td>
+                                    <td class="p-2 text-success-600">₹7.7M</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="p-2">Chennai Facility</td>
+                                    <td class="p-2">₹72.3M</td>
+                                    <td class="p-2">₹63.9M</td>
+                                    <td class="p-2 text-success-600">₹8.4M</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Hyderabad Plant</td>
+                                    <td class="p-2">₹58.9M</td>
+                                    <td class="p-2">₹52.0M</td>
+                                    <td class="p-2 text-success-600">₹6.9M</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-4">
+                        <h3 class="font-semibold mb-2">Implementation Timeline</h3>
+                        <div class="bg-gray-50 p-3 rounded">
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 bg-success-500 rounded-full mr-2"></div>
+                                <span class="text-sm font-medium">Phase 1: Data Analysis - Completed</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 bg-success-500 rounded-full mr-2"></div>
+                                <span class="text-sm font-medium">Phase 2: Optimization Model - Completed</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <div class="w-3 h-3 bg-primary-500 rounded-full mr-2"></div>
+                                <span class="text-sm font-medium">Phase 3: Implementation - In Progress (65%)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-3 h-3 bg-gray-300 rounded-full mr-2"></div>
+                                <span class="text-sm font-medium">Phase 4: Monitoring & Adjustment - Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-end">
+                        <button class="bg-primary-600 text-white px-4 py-2 rounded hover:bg-primary-700 transition-smooth">
+                            Download Full Report
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Add event listener to close button
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+        }
+        
+        function showCapacitySharingAnalysis() {
+            window.location.href = "capacity_sharing_details.html";
+        }
+        
+        function implementResourceReallocation() {
+            // Create modal for implementation confirmation and status
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg p-6 max-w-md w-full';
+            modalContent.innerHTML = `
+                <div class="mb-4 flex justify-between items-start">
+                    <h3 class="text-lg font-semibold text-text-primary">Resource Reallocation</h3>
+                    <button id="closeModal" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <div class="text-sm font-medium">Mumbai → Delhi Resource Reallocation</div>
+                            <div class="text-xs text-success-600">Projected Savings: ₹706 Lakhs</div>
+                        </div>
+                        <div class="bg-success-100 text-success-700 text-xs px-2 py-1 rounded">
+                            Implementing
+                        </div>
+                    </div>
+                    
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                        <div id="progressBar" class="bg-success-500 h-2 rounded-full" style="width: 0%"></div>
+                    </div>
+                    
+                    <div id="statusMessage" class="text-sm text-text-secondary">
+                        Initiating implementation process...
+                    </div>
+                </div>
+                
+                <div class="space-y-3 mb-4">
+                    <div class="p-3 bg-gray-50 rounded-lg">
+                        <h4 class="text-sm font-medium">Implementation Steps</h4>
+                        <ul class="text-xs space-y-2 mt-2">
+                            <li id="step1" class="flex items-center">
+                                <span class="w-4 h-4 mr-2 rounded-full bg-gray-200 flex items-center justify-center text-white">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Resource mapping and allocation planning
+                            </li>
+                            <li id="step2" class="flex items-center">
+                                <span class="w-4 h-4 mr-2 rounded-full bg-gray-200 flex items-center justify-center text-white">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Stakeholder notification and approval
+                            </li>
+                            <li id="step3" class="flex items-center">
+                                <span class="w-4 h-4 mr-2 rounded-full bg-gray-200 flex items-center justify-center text-white">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                System configuration and updates
+                            </li>
+                            <li id="step4" class="flex items-center">
+                                <span class="w-4 h-4 mr-2 rounded-full bg-gray-200 flex items-center justify-center text-white">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </span>
+                                Deployment and verification
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex justify-end">
+                    <button id="viewDetails" class="text-xs bg-success-600 text-white px-3 py-1 rounded hover:bg-success-700 transition-smooth" disabled>
+                        View Details
+                    </button>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Add event listener to close button
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+            
+            // Simulate implementation progress
+            const progressBar = document.getElementById('progressBar');
+            const statusMessage = document.getElementById('statusMessage');
+            const viewDetailsBtn = document.getElementById('viewDetails');
+            const steps = [
+                document.getElementById('step1'),
+                document.getElementById('step2'),
+                document.getElementById('step3'),
+                document.getElementById('step4')
+            ];
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 5;
+                progressBar.style.width = `${progress}%`;
+                
+                // Update steps based on progress
+                if (progress >= 25) {
+                    steps[0].querySelector('span').classList.remove('bg-gray-200');
+                    steps[0].querySelector('span').classList.add('bg-success-500');
+                    statusMessage.textContent = "Resource mapping completed. Notifying stakeholders...";
+                }
+                if (progress >= 50) {
+                    steps[1].querySelector('span').classList.remove('bg-gray-200');
+                    steps[1].querySelector('span').classList.add('bg-success-500');
+                    statusMessage.textContent = "Stakeholder approval received. Configuring systems...";
+                }
+                if (progress >= 75) {
+                    steps[2].querySelector('span').classList.remove('bg-gray-200');
+                    steps[2].querySelector('span').classList.add('bg-success-500');
+                    statusMessage.textContent = "System configuration complete. Deploying changes...";
+                }
+                if (progress >= 100) {
+                    steps[3].querySelector('span').classList.remove('bg-gray-200');
+                    steps[3].querySelector('span').classList.add('bg-success-500');
+                    statusMessage.textContent = "Implementation complete! Resource reallocation successful.";
+                    viewDetailsBtn.disabled = false;
+                    clearInterval(interval);
+                    
+                    // Update the button in the main UI to show implemented
+                    const implementBtn = document.querySelector('.bg-success-50 button');
+                    if (implementBtn) {
+                        implementBtn.textContent = "Implemented";
+                        implementBtn.disabled = true;
+                        implementBtn.classList.add('opacity-75');
+                    }
+                }
+            }, 150);
+            
+            // Add event listener to view details button
+            viewDetailsBtn.addEventListener('click', function() {
+                document.body.removeChild(modal);
+                // Show detailed view modal
+                showResourceReallocationDetails();
+            });
+        }
+        
+        function showResourceReallocationDetails() {
+            // Create modal for detailed view
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg p-6 max-w-5xl w-full max-h-[90vh] overflow-y-auto';
+            modalContent.innerHTML = `
+                <div class="mb-6 flex justify-between items-start">
+                    <div>
+                        <h2 class="text-2xl font-bold text-text-primary">Resource Reallocation Details</h2>
+                        <p class="text-text-secondary">Mumbai → Delhi Implementation</p>
+                    </div>
+                    <button id="closeDetailModal" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Status Banner -->
+                <div class="bg-success-50 border border-success-200 rounded-lg p-4 mb-6 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="bg-success-500 rounded-full p-2 mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-success-700">Implementation Successful</h3>
+                            <p class="text-success-600 text-sm">Completed on ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}</p>
+                        </div>
+                    </div>
+                    <div class="bg-success-100 text-success-700 px-3 py-1 rounded-full text-sm font-medium">
+                        Active
+                    </div>
+                </div>
+                
+                <!-- Key Metrics -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <h4 class="text-sm text-text-secondary mb-1">Projected Annual Savings</h4>
+                        <div class="text-2xl font-bold text-success-600">₹706 Lakhs</div>
+                        <div class="mt-2 flex items-center text-xs text-success-600">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                            32% improvement from previous allocation
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <h4 class="text-sm text-text-secondary mb-1">Resource Utilization</h4>
+                        <div class="text-2xl font-bold text-primary-600">87%</div>
+                        <div class="mt-2 flex items-center text-xs text-success-600">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                            15% increase in efficiency
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <h4 class="text-sm text-text-secondary mb-1">Implementation Time</h4>
+                        <div class="text-2xl font-bold text-text-primary">3 Days</div>
+                        <div class="mt-2 flex items-center text-xs text-success-600">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                            </svg>
+                            2 days ahead of schedule
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resource Allocation Chart -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Resource Allocation Comparison</h3>
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <div class="flex justify-between mb-4">
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-primary-500 rounded-full mr-2"></span>
+                                <span class="text-sm">Before Reallocation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-3 h-3 bg-success-500 rounded-full mr-2"></span>
+                                <span class="text-sm">After Reallocation</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Mumbai Plant -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Mumbai Plant</span>
+                                <span class="text-sm text-text-secondary">Resource Units</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-xs w-16">Before</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-primary-500 h-4 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">85</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="text-xs w-16">After</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-success-500 h-4 rounded-full" style="width: 65%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">65</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Delhi Plant -->
+                        <div class="mb-6">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Delhi Plant</span>
+                                <span class="text-sm text-text-secondary">Resource Units</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-xs w-16">Before</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-primary-500 h-4 rounded-full" style="width: 45%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">45</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="text-xs w-16">After</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-success-500 h-4 rounded-full" style="width: 65%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">65</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Overall Efficiency -->
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm font-medium">Overall Efficiency</span>
+                                <span class="text-sm text-text-secondary">Percentage</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="text-xs w-16">Before</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-primary-500 h-4 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">72%</span>
+                            </div>
+                            <div class="flex items-center mt-1">
+                                <span class="text-xs w-16">After</span>
+                                <div class="flex-1 bg-gray-200 rounded-full h-4 ml-2">
+                                    <div class="bg-success-500 h-4 rounded-full" style="width: 87%"></div>
+                                </div>
+                                <span class="ml-2 text-xs">87%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Implementation Timeline -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Implementation Timeline</h3>
+                    <div class="bg-white border border-gray-200 rounded-lg p-6 shadow-md">
+                        <!-- Timeline Progress Bar -->
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-6 overflow-hidden">
+                            <div class="bg-gradient-to-r from-primary-500 via-blue-500 to-success-500 h-3 rounded-full w-full"></div>
+                            <div class="flex justify-between mt-1 px-1">
+                                <span class="text-xs font-medium">Day 1</span>
+                                <span class="text-xs font-medium">Day 2</span>
+                                <span class="text-xs font-medium">Day 3</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Day 1 -->
+                        <div class="mb-8 pb-6 border-b-2 border-primary-100">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-primary-500 text-white rounded-lg px-3 py-1 text-sm font-bold mr-2">Day 1</div>
+                                <div class="bg-success-100 text-success-700 rounded-full px-2 py-0.5 text-xs">Completed</div>
+                            </div>
+                            <h4 class="text-md font-semibold text-primary-700">Resource Mapping & Planning</h4>
+                            <p class="text-sm text-text-secondary mt-2">Completed detailed analysis of current resource allocation and identified optimal redistribution patterns.</p>
+                            
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Resource Inventory</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Capacity Analysis</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Optimization Modeling</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Day 2 - Enhanced visibility -->
+                        <div class="mb-8 pb-6 border-4 border-blue-600 bg-blue-200 p-4 rounded-lg shadow-lg">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-black text-white rounded-lg px-3 py-1 text-sm font-bold mr-2">Day 2</div>
+                                <div class="bg-success-100 text-success-700 rounded-full px-2 py-0.5 text-xs">Completed</div>
+                            </div>
+                            <h4 class="text-md font-semibold text-blue-700">Stakeholder Approval & System Configuration</h4>
+                            <p class="text-sm text-text-secondary mt-2">Secured necessary approvals from plant managers and began system reconfiguration for new resource allocation.</p>
+                            
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <div class="flex items-center bg-white px-3 py-1 rounded-full border border-blue-200">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Approval Workflow</span>
+                                </div>
+                                <div class="flex items-center bg-white px-3 py-1 rounded-full border border-blue-200">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">System Updates</span>
+                                </div>
+                                <div class="flex items-center bg-white px-3 py-1 rounded-full border border-blue-200">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Documentation</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Day 3 -->
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <div class="bg-success-500 text-white rounded-lg px-3 py-1 text-sm font-bold mr-2">Day 3</div>
+                                <div class="bg-success-100 text-success-700 rounded-full px-2 py-0.5 text-xs">Completed</div>
+                            </div>
+                            <h4 class="text-md font-semibold text-success-700">Deployment & Verification</h4>
+                            <p class="text-sm text-text-secondary mt-2">Successfully deployed the new resource allocation and verified performance improvements across both plants.</p>
+                            
+                            <div class="mt-4 flex flex-wrap gap-3">
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Implementation</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Testing</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-3 py-1 rounded-full">
+                                    <svg class="w-4 h-4 text-success-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-sm">Performance Monitoring</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Financial Impact -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold mb-4">Financial Impact</h3>
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 shadow-sm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="text-md font-medium mb-3">Cost Savings Breakdown</h4>
+                                <table class="w-full text-sm">
+                                    <thead>
+                                        <tr class="border-b">
+                                            <th class="text-left py-2">Category</th>
+                                            <th class="text-right py-2">Amount (₹ Lakhs)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b">
+                                            <td class="py-2">Operational Efficiency</td>
+                                            <td class="text-right">312</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-2">Logistics Optimization</td>
+                                            <td class="text-right">185</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-2">Maintenance Reduction</td>
+                                            <td class="text-right">98</td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="py-2">Energy Savings</td>
+                                            <td class="text-right">111</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 font-semibold">Total Annual Savings</td>
+                                            <td class="text-right font-semibold text-success-600">706</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-md font-medium mb-3">ROI Analysis</h4>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-xs text-text-secondary">Implementation Cost</p>
+                                            <p class="text-lg font-semibold">₹85 Lakhs</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-text-secondary">Annual Savings</p>
+                                            <p class="text-lg font-semibold text-success-600">₹706 Lakhs</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-text-secondary">ROI</p>
+                                            <p class="text-lg font-semibold text-success-600">830%</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-text-secondary">Payback Period</p>
+                                            <p class="text-lg font-semibold">1.4 Months</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <h5 class="text-sm font-medium mb-2">5-Year Projection</h5>
+                                    <div class="w-full bg-gray-200 rounded-full h-4">
+                                        <div class="bg-success-500 h-4 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                    <div class="flex justify-between mt-1 text-xs">
+                                        <span>Year 1: ₹706 Lakhs</span>
+                                        <span>5-Year Total: ₹3,530 Lakhs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex justify-end space-x-3">
+                    <button class="px-4 py-2 border border-gray-300 rounded-lg text-text-primary hover:bg-gray-50 transition-smooth">
+                        Download Report
+                    </button>
+                    <button class="px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-smooth">
+                        Share Results
+                    </button>
+                </div>
+            `;
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Add event listener to close button
+            document.getElementById('closeDetailModal').addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+            
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
